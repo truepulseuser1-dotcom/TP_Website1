@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Tracking Solutions</title>
+    <style>
+        /* -----------------------------
+             GLOBAL STYLES  
+        ------------------------------*/
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 80px 10%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all .8s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* -----------------------------
+             HERO SECTION  
+        ------------------------------*/
+        .hero {
+            background: linear-gradient(135deg, #4c5fff, #6e8fff);
+            padding: 130px 10%;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 1.6s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 8px;
+            margin: 10px;
+            font-weight: 600;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #4c5fff;
+        }
+
+        .btn-primary:hover {
+            background: #cdd4ff;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* -----------------------------
+             VALUE PROPS  
+        ------------------------------*/
+        .value-boxes {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .value-box {
+            flex: 1;
+            min-width: 260px;
+            padding: 30px;
+            /* background: white; */
+            /* background-color: rgba(192, 218, 231, 0.996); */
+            border:1px solid rgba(192, 218, 231, 0.832);
+            background:rgba(192, 218, 231, 0.44);
+            color:white;
+            border-radius: 12px;
+            /* box-shadow: 0 6px 20px rgba(0, 0, 0, .08); */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .value-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .12);
+        }
+
+        /* -----------------------------
+             STEPS (12-step process)  
+        ------------------------------*/
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .step {
+            /* background: white; */
+            /* background: rgba(192, 218, 231, 0.996); */
+            border:1px solid rgba(192, 218, 231, 0.832);
+            background:rgba(192, 218, 231, 0.44);
+            color : white;
+            padding: 25px;
+            border-radius: 12px;
+            /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            transition: .3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            /* background: #4c5fff; */
+            background: rgba(80, 108, 122, 0.996);
+            color: white;
+            display: inline-block;
+            padding: 8px 16px;
+            /* border-radius: 6px; */
+            border-radius: 50%;
+            border-style: double;
+            border-color: #162027;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* -----------------------------
+             TESTIMONIALS  
+        ------------------------------*/
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            /* box-shadow: 0 6px 20px rgba(0, 0, 0, .08); */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: "“";
+            font-size: 60px;
+            color: #4c5fff;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        /* -----------------------------
+             CTA BANNER  
+        ------------------------------*/
+        .cta {
+            background: #4c5fff;
+            color: white;
+            text-align: center;
+            padding: 70px 10%;
+            border-radius: 12px;
+        }
+
+        /* -----------------------------
+             FOOTER  
+        ------------------------------*/
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 10%;
+            margin-top: 60px;
+        }
+
+        /* -----------------------------
+             KEYFRAME ANIMATIONS  
+        ------------------------------*/
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ********** new1 ************** */
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+
+        .angled-bg {
+            position: relative;
+            height: 350px;
+            padding: 80px 60px;
+            background: #263038;
+            /* base color */
+            overflow: hidden;
+            color: white;
+            /* clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% 85%, 
+    50% 100%,  
+    0 85%
+  );
+  transition: clip-path 0.3s ease; */
+            /* clip-path: ellipse(100% 90% at 50% 0); */
+            clip-path: url(#sCurveClip);
+
+
+        }
+
+        /* TEXT STYLE */
+        .angled-bg h1 {
+            font-size: 72px;
+            font-weight: 300;
+            line-height: 1.1;
+            z-index: 5;
+            position: relative;
+        }
+
+        /* ANGLED LAYERS */
+        .angled-bg::before,
+        .angled-bg::after {
+            content: "";
+            position: absolute;
+            top: -800px;
+            bottom: -80px;
+            width: 200%;
+            left: -50%;
+            transform: rotate(-12deg);
+            z-index: 1;
+        }
+
+        /* Layer 1 - medium diagonal */
+        .angled-bg::before {
+            background: linear-gradient(to right,
+                    #2f3a44 0%,
+                    #263038 60%);
+        }
+
+        /* Layer 2 - darker diagonal */
+        .angled-bg::after {
+            background: linear-gradient(to right,
+                    #1d252c 20%,
+                    #222c33 80%);
+            transform: rotate(-18deg);
+            opacity: 0.8;
+        }
+
+        /* ------------ new ---------------*/
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .hero-bg {
+            position: relative;
+            height: 360px;
+            background: #222e36;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-left: 90px;
+            color: #ffffff;
+        }
+
+        /* Text styling */
+        .hero-inner h1 {
+            font-size: 70px;
+            font-weight: 300;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* PANEL 1 -------------------------------------------- */
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            top: -40%;
+            left: -20%;
+            background: linear-gradient(135deg, #2c3740, #25313a);
+            transform: rotate(-18deg);
+            z-index: 1;
+        }
+
+        /* PANEL 2 -------------------------------------------- */
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            top: -35%;
+            left: -30%;
+            background: linear-gradient(135deg, #25313a, #1f2a31);
+            transform: rotate(-10deg);
+            opacity: 0.85;
+            z-index: 2;
+        }
+
+        /* PANEL 3 -------------------------------------------- */
+        .hero-bg .panel3 {
+            content: "";
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            top: -30%;
+            left: -20%;
+            background: linear-gradient(135deg, #1c252b, #162027);
+            transform: rotate(-4deg);
+            opacity: 0.75;
+            z-index: 3;
+        }
+
+        /* PANEL 4 (thin highlight stripe) ----------------------- */
+        .hero-bg .panel4 {
+            content: "";
+            position: absolute;
+            width: 140%;
+            height: 140%;
+            top: -25%;
+            left: -10%;
+            background: rgba(255, 255, 255, 0.03);
+            transform: rotate(-14deg);
+            z-index: 4;
+        }
+
+        .newbg {
+            background-color: rgba(34, 110, 147, 1);
+            background-image: url(https://github.com/truepulseuser1-dotcom/TP_Website1/blob/main/IMG_20251204_145129.png?raw=true);
+            /* background-image: url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png); */
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .wtxt {
+            color: white;
+        }
+
+        .curved-rectangle {
+            background-color: #1e2a34;
+            /* dark background */
+            color: white;
+            padding: 60px 40px;
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        /* ----------------new for dashboard ----------------*/
+
+        .side-by-side {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            /* max-width: 1500px; */
+            max-width: 97%;
+            margin: auto auto;
+            border-radius: 12px;
+            border:1px solid rgba(192, 218, 231, 0.832);
+            background:rgba(192, 218, 231, 0.44);
+            flex-wrap: wrap;
+            padding: 5% 5%;
+            
+        }
+
+        .side-by-side .text {
+            flex: 1;
+        }
+
+        .side-by-side .text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+
+        .side-by-side .image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .side-by-side .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .side-by-side .image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive: stack on small screens */
+        @media screen and (max-width: 768px) {
+            .side-by-side {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .side-by-side .text,
+            .side-by-side .image {
+                flex: unset;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="newbg">
+
+    <!-- SVG clipPath definition (hidden, but usable) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <clipPath id="sCurveClip" clipPathUnits="objectBoundingBox">
+                <path d="
+        M 0,0
+        L 1,0
+        L 1,0.75
+        C 0.85,0.85 0.65,0.65 0.5,0.75
+        C 0.35,0.85 0.15,1 0,0.75
+        Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+
+    <!-- HERO SECTION -->
+    <header class="angled-bg" "curved-">
+        <h1>Full Visibility Into Every Phone Lead — From Click to Call</h1>
+        <p>Track every call down to the exact campaign, channel, ad, and keyword that drove it.</p>
+        <a href="#" class="btn btn-primary">Get Free Analytics Enrollment</a>
+        <a href="#" class="btn btn-secondary">Book Consultation</a>
+    </header>
+
+        <!-- ************************** -->
+        <section>
+        <div class="side-by-side">
+            <div class="text">
+                <p>
+                    Now we have full visibility into every phone lead — including the exact campaign, channel, ad, and
+                    keyword that drove the call — giving us complete and accurate ROI reporting across all marketing
+                    activities.
+                </p>
+            </div>
+            <div class="image">
+                <!-- <img src="https://via.placeholder.com/500x300" alt="Call Tracking Illustration"> -->
+                <img src="https://github.com/truepulseuser1-dotcom/TP_Website1/blob/main/dashboard%201.png?raw=true" alt="Call Tracking Illustration">
+            </div>
+        </div>
+        </section>
+
+        <!-- VALUE PROPOSITIONS -->
+        <section id="value-props" class="value-props">
+            <h2 class="wtxt">Why Businesses Choose Our Call Tracking</h2>
+            <br>
+            <div class="value-boxes">
+                <div class="value-box" id="samp1">✔ Precise Attribution</div>
+                <div class="value-box">✔ Real-Time Caller Insights</div>
+                <div class="value-box">✔ Smarter Budget Allocation</div>
+                <div class="value-box">✔ Unified Reporting Integrations</div>
+            </div>
+        </section>
+
+        <!-- 12 STEP PROCESS -->
+        <section id="process">
+            <h2 class="wtxt">Our Proven 12-Step Setup Process</h2>
+            <br>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>Initial Consultation
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>Free Analytics Enrollment
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>Code Placement
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>Data Collection Period
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>Analysis & Proposal
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>Number Procurement
+                </div>
+                <div class="step">
+                    <div class="step-number">7</div>UAT Testing
+                </div>
+                <div class="step">
+                    <div class="step-number">8</div>Go-Live Implementation
+                </div>
+                <div class="step">
+                    <div class="step-number">9</div>Integrations
+                </div>
+                <div class="step">
+                    <div class="step-number">10</div>Training & Handover
+                </div>
+                <div class="step">
+                    <div class="step-number">11</div>Evaluation & Feedback
+                </div>
+                <div class="step">
+                    <div class="step-number">12</div>Advanced Optimization
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials">
+            <h2 class="wtxt">What Our Clients Are Saying</h2>
+            <br>
+            <div class="testimonials">
+                <div class="testimonial">
+                    Now we have full visibility into every phone lead — including the exact campaign, channel, ad, and
+                    keyword that drove the call.
+                </div>
+                <div class="testimonial">
+                    Real-time insights into call times, caller history, and locations help us plan staffing and refine
+                    our sales process.
+                </div>
+                <div class="testimonial">
+                    We can now make confident, data-driven marketing decisions and reduce wasted spend.
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <section class="cta">
+            <h2>Ready to Track Every Call With 100% Accuracy?</h2>
+            <br>
+            <a href="#" class="btn btn-primary">Start Free Analytics Enrollment</a>
+            <a href="#" class="btn btn-secondary" style="border-color:white;">Book a Consultation</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Call Tracking Solutions — All Rights Reserved.
+        </footer>
+
+        <!-- SCROLL ANIMATION SCRIPT -->
+        <script>
+            const sections = document.querySelectorAll('section');
+
+
+            const revealOnScroll = () => {
+                const trigger = window.innerHeight * 0.85;
+
+                sections.forEach(sec => {
+                    const top = sec.getBoundingClientRect().top;
+                    if (top < trigger) sec.classList.add('show');
+                });
+            };
+
+            // const final_2 = document.getElementById("samp1");
+            // const observer = new IntersectionObserver((entries) =>{
+            //     entries.forEach(entry =>{
+            //         if(entry.isIntersecting){
+            //             entry.target.classList.add('show');
+            //             sections.classList.add('show');
+            //         }
+            //         if(!entry.isIntersecting && entry.boundingClientRect.top !== 0){
+            //             entry.target.classList.remove('show');
+            //             sections.classList.remove('show');
+            //         }
+            //     })
+            // },{
+            //     threshold: 0.05 // 10% visible
+            // });
+            // observer.observe(final_2);
+
+            window.addEventListener('scroll', revealOnScroll);
+            window.addEventListener('load', revealOnScroll);
+        </script>
+
+</body>
+
+</html>
